@@ -2305,9 +2305,9 @@
                               <setting name="hostname" value="tcpipBoard0"/>
                               <setting name="boolDhcp" value="false"/>
                               <setting name="boolAutoip" value="false"/>
-                              <setting name="ipv4Address" value="192.168.0.200"/>
+                              <setting name="ipv4Address" value="10.42.0.200"/>
                               <setting name="ipv4Subnet" value="255.255.255.0"/>
-                              <setting name="ipv4Gateway" value="192.168.0.1"/>
+                              <setting name="ipv4Gateway" value="10.42.0.1"/>
                               <setting name="boolIpv6" value="true"/>
                            </struct>
                         </array>
