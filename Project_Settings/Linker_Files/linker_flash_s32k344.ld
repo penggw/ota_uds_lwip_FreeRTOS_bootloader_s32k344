@@ -45,9 +45,17 @@ __HSE_DATA_SIZE = 0x10000;  /* 64Kbyte for HSE data */
 
 ENTRY(Reset_Handler)
 
+/*
+Bank 0: 0x00400000 - 0x004FFFFF (1MB) - Bootloader
+Bank 1: 0x00500000 - 0x005FFFFF (1MB) - APP BANK A
+Bank 2: 0x00600000 - 0x006FFFFF (1MB) - APP BANK B
+Bank 3: 0x00700000 - 0x007FFFFF (1MB) - OTA BUFFER AREA (may not used)
+*/
+
 MEMORY
 {
-    int_pflash              : ORIGIN = 0x00400000, LENGTH = 0x00400000-__HSE_CODE_SIZE    /* 4096KB - __HSE_CODE_SIZE (sBAF + HSE)*/
+    /* int_pflash              : ORIGIN = 0x00400000, LENGTH = 0x00400000-__HSE_CODE_SIZE */   /* 4096KB - __HSE_CODE_SIZE (sBAF + HSE)*/ 
+    int_pflash              : ORIGIN = 0x00400000, LENGTH = 0x00100000    /* 1024KB for bootloader (1/3 of total flash) */
     int_dflash              : ORIGIN = 0x10000000, LENGTH = 0x00020000-__HSE_DATA_SIZE    /* 128KB - __HSE_DATA_SIZE*/
     int_itcm                : ORIGIN = 0x00000000, LENGTH = 0x00010000    /* 64KB */
     int_dtcm                : ORIGIN = 0x20000000, LENGTH = 0x0001F000    /* 124KB */
