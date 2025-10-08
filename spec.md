@@ -136,6 +136,13 @@ graph TD
 8. **mDNS**: Service discovery
 9. **SNMP**: Network management
 
+#### LED Control Tasks:
+10. **LED_RED Blink Task**: Demonstration task that blinks LED_RED every second
+    - GPIO: PTA29 (output mode)
+    - Blink frequency: 500ms on/500ms off (1Hz)
+    - FreeRTOS task: Low priority background task
+    - Purpose: Visual system status indication
+
 ## 4. Data Flow Diagrams
 
 ### 4.1 System Initialization Flowchart

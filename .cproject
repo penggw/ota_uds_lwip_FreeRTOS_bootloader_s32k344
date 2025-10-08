@@ -230,7 +230,7 @@
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 	<storageModule moduleId="com.nxp.s32ds.cle.uct.core">
-		<sdkComponents>platform.driver.rte_port;platform.driver.hse;platform.driver.pins;platform.middleware.wolfssl;platform.middleware.freertos;platform.os.freertos_heap_4;platform.driver.Platform;platform.driver.det;platform.driver.rte_platform;platform.driver.clock;platform.driver.rte_mcu;platform.driver.osif;platform.driver.mcu;platform.driver.port;platform.driver.eth_43_gmac;platform.driver.rte_eth;platform.driver.ethif;platform.driver.ethswt;platform.driver.ethtrcv;platform.os.freertosCM7;platform.os.freertos;platform.middleware.tcpip;platform.driver.rte_osif;platform.driver.mka;platform.driver.c40_ip;platform.driver.cache;platform.driver.rte_mcl;platform.driver.rte_mem_43_infls</sdkComponents>
+		<sdkComponents>platform.driver.rte_port;platform.driver.hse;platform.driver.pins;platform.middleware.wolfssl;platform.middleware.freertos;platform.os.freertos_heap_4;platform.os.freertosCM7;platform.os.freertos;platform.driver.dio;platform.driver.rte_dio;platform.driver.Platform;platform.driver.det;platform.driver.rte_platform;platform.driver.clock;platform.driver.rte_mcu;platform.driver.osif;platform.driver.rte_osif;platform.driver.mcu;platform.middleware.tcpip;platform.driver.port;platform.driver.eth_43_gmac;platform.driver.rte_eth;platform.driver.ethif;platform.driver.mka;platform.driver.ethswt;platform.driver.ethtrcv;platform.driver.cache;platform.driver.rte_mcl;platform.driver.c40_ip;platform.driver.rte_mem_43_infls</sdkComponents>
 	</storageModule>
 	<storageModule moduleId="com.nxp.s32ds.cle.uct.internal.core.toolchainSettings">
 		<COND_TOOLCHAIN_LIBRARIES/>
@@ -241,6 +241,6 @@
 		<COND_TOOLCHAIN_INCLUDES>stacks/tcpip/lwip/src/include;stacks/tcpip/code;stacks/tcpip/code/ports/platform/generic/gcc/setting;stacks/tcpip/code/ports/osif/rtd;stacks/tcpip/code/ports/netif/ethif/rtd;stacks/tcpip/code/ports/OS/FreeRTOS;stacks/tcpip/code/ports/OS/FreeRTOS/arch;</COND_TOOLCHAIN_INCLUDES>
 	</storageModule>
 	<storageModule moduleId="com.nxp.s32ds.cle.uct.internal.core.toolchainScriptProfile">
-		<COND_TOOLCHAIN_COMPONENTS_OPTION>COPY=platform.os.freertos_heap_4;platform.driver.Platform;platform.driver.clock;platform.driver.osif;platform.driver.mcu;platform.middleware.tcpip;platform.driver.port;platform.driver.eth_43_gmac;platform.driver.cache;platform.middleware.freertos;platform.os.freertosCM7;platform.os.freertos;platform.driver.c40_ip</COND_TOOLCHAIN_COMPONENTS_OPTION>
+		<COND_TOOLCHAIN_COMPONENTS_OPTION>COPY=platform.os.freertos_heap_4;platform.driver.Platform;platform.driver.clock;platform.driver.osif;platform.driver.mcu;platform.middleware.tcpip;platform.driver.port;platform.driver.eth_43_gmac;platform.driver.cache;platform.middleware.freertos;platform.driver.dio;platform.os.freertosCM7;platform.os.freertos;platform.driver.c40_ip</COND_TOOLCHAIN_COMPONENTS_OPTION>
 	</storageModule>
 </cproject>

@@ -9,6 +9,8 @@
 - Function-level comments must be provided when generating code
 - When planning the project, provide analysis recommendations for frameworks to be used, and allow the user to select the final framework
 
+### Build Code
+- cd .\Debug_FLASH\ ; make all
 
 ### Coordinator Pattern (Boomerang Pattern) Requirements
 
@@ -23,6 +25,7 @@
 - `spec.md` must be confirmed before each code modification
 - Task progress `todolist.md` must be updated after task completion
 - Upon project completion, write a `readme.md` that includes project description, installation instructions, and execution methods
+- 請在每個task進行中時將產出的文件source code完整提供出來
 
 ***
 

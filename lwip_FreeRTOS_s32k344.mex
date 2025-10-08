@@ -518,9 +518,14 @@
                   <data type="Version">1.0.0</data>
                </feature>
             </dependency>
-            <dependency resourceType="Tool" resourceId="Clocks" description="外围设备工具需要 Clocks 工具，但它已被禁用。" problem_level="2" source="Peripherals">
+            <dependency resourceType="SWComponent" resourceId="platform.driver.dio" description="工具链/IDE工程中未找到dio。工程不会被编译！" problem_level="2" source="Peripherals">
                <feature name="enabled" evaluation="equal">
-                  <data>true</data>
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.dio" description="工具链/IDE工程不支持dio版本。所需值: ${required_value}, 实际值: ${actual_value}. 工程可能没有被正确编译。" problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">1.0.0</data>
                </feature>
             </dependency>
          </dependencies>
@@ -536,6 +541,7 @@
             <file path="generate/include/Clock_Ip_Cfg_Defines.h" update_enabled="true"/>
             <file path="generate/include/Clock_Ip_PBcfg.h" update_enabled="true"/>
             <file path="generate/include/DeviceDefinition.h" update_enabled="true"/>
+            <file path="generate/include/Dio_Cfg.h" update_enabled="true"/>
             <file path="generate/include/Eth_43_GMAC_Cfg.h" update_enabled="true"/>
             <file path="generate/include/Eth_43_GMAC_Ipw_Cfg.h" update_enabled="true"/>
             <file path="generate/include/Eth_43_GMAC_Ipw_PBcfg.h" update_enabled="true"/>
@@ -569,6 +575,7 @@
             <file path="generate/include/Ram_Ip_Cfg.h" update_enabled="true"/>
             <file path="generate/include/Ram_Ip_Cfg_Defines.h" update_enabled="true"/>
             <file path="generate/include/Ram_Ip_PBcfg.h" update_enabled="true"/>
+            <file path="generate/include/Siul2_Dio_Ip_Cfg.h" update_enabled="true"/>
             <file path="generate/include/Siul2_Port_Ip_Defines.h" update_enabled="true"/>
             <file path="generate/include/Siul2_Port_Ip_PBcfg.h" update_enabled="true"/>
             <file path="generate/include/Soc_Ips.h" update_enabled="true"/>
@@ -583,6 +590,7 @@
             <file path="generate/src/C40_Ip_Cfg.c" update_enabled="true"/>
             <file path="generate/src/Clock_Ip_Cfg.c" update_enabled="true"/>
             <file path="generate/src/Clock_Ip_PBcfg.c" update_enabled="true"/>
+            <file path="generate/src/Dio_Cfg.c" update_enabled="true"/>
             <file path="generate/src/Eth_43_GMAC_Ipw_PBcfg.c" update_enabled="true"/>
             <file path="generate/src/Eth_43_GMAC_PBcfg.c" update_enabled="true"/>
             <file path="generate/src/Gmac_Ip_Cfg.c" update_enabled="true"/>
@@ -2989,6 +2997,72 @@
                               <setting name="MclEnableCache" value="false"/>
                               <setting name="MclEnableCacheDevErrorDetect" value="false"/>
                            </struct>
+                        </struct>
+                     </config_set>
+                  </instance>
+                  <instance name="Dio" uuid="be41a31e-90a1-44a1-a307-829b7cf40041" type="Dio" type_id="Dio" mode="autosar" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="Dio">
+                        <setting name="Name" value="Dio"/>
+                        <struct name="ConfigTimeSupport">
+                           <setting name="POST_BUILD_VARIANT_USED" value="false"/>
+                           <setting name="IMPLEMENTATION_CONFIG_VARIANT" value="VARIANT-LINK-TIME"/>
+                        </struct>
+                        <struct name="DioGeneral">
+                           <setting name="Name" value="DioGeneral"/>
+                           <setting name="DioDevErrorDetect" value="false"/>
+                           <setting name="SIUL2DioIPDevErrorDetect" value="false"/>
+                           <setting name="DioVersionInfoApi" value="false"/>
+                           <setting name="DioReversePortBits" value="false"/>
+                           <setting name="DioFlipChannelApi" value="false"/>
+                           <setting name="DioReadZeroForUndefinedPortPins" value="false"/>
+                           <setting name="DioMaskedWritePortApi" value="false"/>
+                           <setting name="DioEnableUserModeSupport" value="false"/>
+                           <setting name="DioMultiPartitionSupport" value="false"/>
+                           <setting name="DioVirtWrapperSupport" value="false"/>
+                           <array name="DioEcucPartitionRef"/>
+                        </struct>
+                        <struct name="DioConfig">
+                           <setting name="Name" value="DioConfig"/>
+                           <array name="DioPort">
+                              <struct name="0">
+                                 <setting name="Name" value="DioPort_1"/>
+                                 <setting name="DioPortId" value="1"/>
+                                 <array name="DioChannel">
+                                    <struct name="0">
+                                       <setting name="Name" value="LED_RED"/>
+                                       <setting name="DioChannelId" value="13"/>
+                                       <setting name="PDACSlot" value="VIRTUAL_WRAPPER_PDAC0"/>
+                                       <array name="DioChannelEcucPartitionRef"/>
+                                    </struct>
+                                    <struct name="1">
+                                       <setting name="Name" value="LED_GREEN"/>
+                                       <setting name="DioChannelId" value="14"/>
+                                       <setting name="PDACSlot" value="VIRTUAL_WRAPPER_PDAC0"/>
+                                       <array name="DioChannelEcucPartitionRef"/>
+                                    </struct>
+                                    <struct name="2">
+                                       <setting name="Name" value="LED_BLIUE"/>
+                                       <setting name="DioChannelId" value="15"/>
+                                       <setting name="PDACSlot" value="VIRTUAL_WRAPPER_PDAC0"/>
+                                       <array name="DioChannelEcucPartitionRef"/>
+                                    </struct>
+                                 </array>
+                                 <array name="DioChannelGroup"/>
+                                 <array name="DioPortEcucPartitionRef"/>
+                              </struct>
+                           </array>
+                        </struct>
+                        <struct name="CommonPublishedInformation" quick_selection="Default">
+                           <setting name="Name" value="CommonPublishedInformation"/>
+                           <setting name="ArReleaseMajorVersion" value="4"/>
+                           <setting name="ArReleaseMinorVersion" value="7"/>
+                           <setting name="ArReleaseRevisionVersion" value="0"/>
+                           <setting name="ModuleId" value="120"/>
+                           <setting name="SwMajorVersion" value="6"/>
+                           <setting name="SwMinorVersion" value="0"/>
+                           <setting name="SwPatchVersion" value="0"/>
+                           <setting name="VendorApiInfix" value=""/>
+                           <setting name="VendorId" value="43"/>
                         </struct>
                      </config_set>
                   </instance>

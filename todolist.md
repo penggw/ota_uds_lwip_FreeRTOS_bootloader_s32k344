@@ -9,6 +9,7 @@ This task list outlines the implementation requirements for the S32K344-based ne
 - [x] Architecture diagrams designed
 - [x] Task list document created (todolist.md)
 - [x] All documents finalized and ready for implementation
+- [x] LED_RED blink task implemented and integrated
 
 ## Hardware Layer Implementation
 

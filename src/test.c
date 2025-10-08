@@ -151,6 +151,9 @@
 /* include the port-dependent configuration */
 #include "lwipcfg.h"
 
+/* LED blink task includes */
+#include "led.h"
+
 /* applications includes */
 
 #if LWIP_HTTPD_APP
@@ -652,9 +655,15 @@ static void mainLoopTask(void* pvParameters)
 void start_example(void)
 {
 #if defined(USING_OS_FREERTOS)
-  BaseType_t ret =xTaskCreate(mainLoopTask, "mainloop", 256U, NULL, DEFAULT_THREAD_PRIO, NULL);
+  BaseType_t ret;
+  ret = xTaskCreate(mainLoopTask, "mainloop", 256U, NULL, DEFAULT_THREAD_PRIO, NULL);
                                      /* Start the tasks and timer running. */
   LWIP_ASSERT("failed to create mainloop", ret == pdPASS);
+
+  /* Create LED_RED blink task */
+  ret = xTaskCreate(LED_RED_Blink_Task, "LED_RED_Blink", 128U, NULL, tskIDLE_PRIORITY + 1U, NULL);
+  LWIP_ASSERT("failed to create LED_RED_Blink", ret == pdPASS);
+
   vTaskStartScheduler();
 
   /* If all is well, the scheduler will now be running, and the following
