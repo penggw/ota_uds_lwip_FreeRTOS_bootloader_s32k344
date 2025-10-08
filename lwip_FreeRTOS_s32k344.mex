@@ -26,6 +26,27 @@
          </generated_project_files>
          <pins_profile>
             <processor_version>0.0.0</processor_version>
+            <pin_labels>
+               <pin_label pin_num="32" pin_signal="PTA29" label="LED_RED" identifier="LED_RED"/>
+               <pin_label pin_num="33" pin_signal="PTA30" label="LED_GREEN" identifier="LED_GREEN"/>
+               <pin_label pin_num="39" pin_signal="PTA31" label="LED_BLUE" identifier="LED_BLUE"/>
+               <pin_label pin_num="73" pin_signal="PTB26" label="BUTTON_0" identifier="BUTTON_0"/>
+               <pin_label pin_num="43" pin_signal="PTB19" label="BUTTON_1" identifier="BUTTON_1"/>
+               <pin_label pin_num="145" pin_signal="PTA15" label="DBG_UART_RX" identifier="DBG_UART_RX"/>
+               <pin_label pin_num="143" pin_signal="PTA16" label="DBG_UART_TX" identifier="DBG_UART_TX"/>
+               <pin_label pin_num="102" pin_signal="PTA6" label="CAN0_RX" identifier="CAN0_RX"/>
+               <pin_label pin_num="100" pin_signal="PTA7" label="CAN0_TX" identifier="CAN0_TX"/>
+               <pin_label pin_num="48" pin_signal="PTB4" label="EMAC_MDIO" identifier="EMAC_MDIO"/>
+               <pin_label pin_num="47" pin_signal="PTB5" label="EMAC_MDC" identifier="EMAC_MDC"/>
+               <pin_label pin_num="62" pin_signal="PTC0" label="EMAC_RXD1" identifier="EMAC_RXD1"/>
+               <pin_label pin_num="61" pin_signal="PTC1" label="EMAC_RXD0" identifier="EMAC_RXD0"/>
+               <pin_label pin_num="50" pin_signal="PTC2" label="EMAC_TXD0" identifier="EMAC_TXD0"/>
+               <pin_label pin_num="66" pin_signal="PTC16" label="EMAC_TXD1" identifier="EMAC_TX_ER"/>
+               <pin_label pin_num="65" pin_signal="PTC17" label="EMAC_RX_DV" identifier="EMAC_RX_DV"/>
+               <pin_label pin_num="51" pin_signal="PTD7" label="EMAC_TXD1" identifier="EMAC_TXD1"/>
+               <pin_label pin_num="55" pin_signal="PTD11" label="EMAC_TX_CLK" identifier="EMAC_TX_CLK"/>
+               <pin_label pin_num="54" pin_signal="PTD12" label="EMAC_TX_EN" identifier="EMAC_TX_EN"/>
+            </pin_labels>
          </pins_profile>
          <functions_list>
             <function name="PortContainer_0_VS_0">
@@ -42,18 +63,106 @@
                   </dependency>
                </dependencies>
                <pins>
-                  <pin peripheral="EMAC" signal="emac_mii_rmii_tx_clk" pin_num="55" pin_signal="PTD11"/>
-                  <pin peripheral="EMAC" signal="emac_mii_rmii_txd, 0" pin_num="50" pin_signal="PTC2"/>
-                  <pin peripheral="EMAC" signal="emac_mii_rmii_txd, 1" pin_num="51" pin_signal="PTD7"/>
-                  <pin peripheral="EMAC" signal="emac_mii_rmii_tx_en" pin_num="54" pin_signal="PTD12"/>
-                  <pin peripheral="EMAC" signal="emac_mii_rmii_rxd, 0" pin_num="61" pin_signal="PTC1"/>
-                  <pin peripheral="EMAC" signal="emac_mii_rmii_rxd, 1" pin_num="62" pin_signal="PTC0"/>
-                  <pin peripheral="EMAC" signal="emac_mii_rmii_rx_dv" pin_num="65" pin_signal="PTC17"/>
-                  <pin peripheral="EMAC" signal="emac_mii_rmii_rx_er" pin_num="66" pin_signal="PTC16"/>
-                  <pin peripheral="EMAC" signal="emac_mii_rmii_mdc" pin_num="47" pin_signal="PTB5"/>
+                  <pin peripheral="EMAC" signal="emac_mii_rmii_tx_clk" pin_num="55" pin_signal="PTD11">
+                     <pin_features>
+                        <pin_feature name="identifier" value=""/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="EMAC" signal="emac_mii_rmii_txd, 0" pin_num="50" pin_signal="PTC2">
+                     <pin_features>
+                        <pin_feature name="identifier" value=""/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="EMAC" signal="emac_mii_rmii_txd, 1" pin_num="51" pin_signal="PTD7">
+                     <pin_features>
+                        <pin_feature name="identifier" value=""/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="EMAC" signal="emac_mii_rmii_tx_en" pin_num="54" pin_signal="PTD12">
+                     <pin_features>
+                        <pin_feature name="identifier" value=""/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="EMAC" signal="emac_mii_rmii_rxd, 0" pin_num="61" pin_signal="PTC1">
+                     <pin_features>
+                        <pin_feature name="identifier" value=""/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="EMAC" signal="emac_mii_rmii_rxd, 1" pin_num="62" pin_signal="PTC0">
+                     <pin_features>
+                        <pin_feature name="identifier" value=""/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="EMAC" signal="emac_mii_rmii_rx_dv" pin_num="65" pin_signal="PTC17">
+                     <pin_features>
+                        <pin_feature name="identifier" value=""/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="EMAC" signal="emac_mii_rmii_rx_er" pin_num="66" pin_signal="PTC16">
+                     <pin_features>
+                        <pin_feature name="identifier" value=""/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="EMAC" signal="emac_mii_rmii_mdc" pin_num="47" pin_signal="PTB5">
+                     <pin_features>
+                        <pin_feature name="identifier" value=""/>
+                     </pin_features>
+                  </pin>
                   <pin peripheral="EMAC" signal="emac_mii_rmii_mdio" pin_num="48" pin_signal="PTB4">
                      <pin_features>
+                        <pin_feature name="identifier" value=""/>
                         <pin_feature name="direction" value="INPUT/OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="CAN0" signal="can0_rx" pin_num="102" pin_signal="PTA6">
+                     <pin_features>
+                        <pin_feature name="identifier" value=""/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="CAN0" signal="can0_tx" pin_num="100" pin_signal="PTA7">
+                     <pin_features>
+                        <pin_feature name="identifier" value=""/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="SIUL2" signal="gpio, 29" pin_num="32" pin_signal="PTA29">
+                     <pin_features>
+                        <pin_feature name="identifier" value=""/>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="SIUL2" signal="gpio, 30" pin_num="33" pin_signal="PTA30">
+                     <pin_features>
+                        <pin_feature name="identifier" value=""/>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="SIUL2" signal="gpio, 31" pin_num="39" pin_signal="PTA31">
+                     <pin_features>
+                        <pin_feature name="identifier" value=""/>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="SIUL2" signal="gpio, 58" pin_num="73" pin_signal="PTB26">
+                     <pin_features>
+                        <pin_feature name="identifier" value=""/>
+                        <pin_feature name="direction" value="INPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="SIUL2" signal="gpio, 51" pin_num="43" pin_signal="PTB19">
+                     <pin_features>
+                        <pin_feature name="identifier" value=""/>
+                        <pin_feature name="direction" value="INPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="LPUART6" signal="lpuart6_rx" pin_num="145" pin_signal="PTA15">
+                     <pin_features>
+                        <pin_feature name="identifier" value=""/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="LPUART6" signal="lpuart6_tx" pin_num="143" pin_signal="PTA16">
+                     <pin_features>
+                        <pin_feature name="identifier" value=""/>
+                        <pin_feature name="direction" value="OUTPUT"/>
                      </pin_features>
                   </pin>
                </pins>
@@ -389,6 +498,26 @@
                   <data type="Version">1.0.0</data>
                </feature>
             </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.c40_ip" description="工具链/IDE工程中未找到C40_Ip。工程不会被编译！" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.c40_ip" description="工具链/IDE工程不支持C40_Ip版本。所需值: ${required_value}, 实际值: ${actual_value}. 工程可能没有被正确编译。" problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">1.0.0</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.cache" description="工具链/IDE工程中未找到cache。工程不会被编译！" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.cache" description="工具链/IDE工程不支持cache版本。所需值: ${required_value}, 实际值: ${actual_value}. 工程可能没有被正确编译。" problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">1.0.0</data>
+               </feature>
+            </dependency>
             <dependency resourceType="Tool" resourceId="Clocks" description="外围设备工具需要 Clocks 工具，但它已被禁用。" problem_level="2" source="Peripherals">
                <feature name="enabled" evaluation="equal">
                   <data>true</data>
@@ -400,6 +529,9 @@
             <file path="board/Siul2_Port_Ip_Cfg.h" update_enabled="true"/>
             <file path="board/Tspc_Port_Ip_Cfg.c" update_enabled="true"/>
             <file path="board/Tspc_Port_Ip_Cfg.h" update_enabled="true"/>
+            <file path="generate/include/C40_Ip_Cfg.h" update_enabled="true"/>
+            <file path="generate/include/Cache_Ip_Cfg_Defines.h" update_enabled="true"/>
+            <file path="generate/include/Cache_Ip_Cfg_DeviceRegisters.h" update_enabled="true"/>
             <file path="generate/include/Clock_Ip_Cfg.h" update_enabled="true"/>
             <file path="generate/include/Clock_Ip_Cfg_Defines.h" update_enabled="true"/>
             <file path="generate/include/Clock_Ip_PBcfg.h" update_enabled="true"/>
@@ -448,6 +580,7 @@
             <file path="generate/include/lwippools.h" update_enabled="true"/>
             <file path="generate/include/modules.h" update_enabled="true"/>
             <file path="generate/include/netifcfg.h" update_enabled="true"/>
+            <file path="generate/src/C40_Ip_Cfg.c" update_enabled="true"/>
             <file path="generate/src/Clock_Ip_Cfg.c" update_enabled="true"/>
             <file path="generate/src/Clock_Ip_PBcfg.c" update_enabled="true"/>
             <file path="generate/src/Eth_43_GMAC_Ipw_PBcfg.c" update_enabled="true"/>
@@ -2235,6 +2368,195 @@
                                        <array name="IGFSettings"/>
                                        <array name="PortPinEcucPartitionRef"/>
                                     </struct>
+                                    <struct name="10">
+                                       <setting name="Name" value="PortPin_10"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="11"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                       <setting name="OBEGroupSelect" value="NO_OBE_GROUP"/>
+                                       <setting name="MscrPdacSlot" value="VIRTUAL_WRAPPER_PDAC0"/>
+                                       <setting name="ImcrPdacSlot" value="VIRTUAL_WRAPPER_PDAC0"/>
+                                       <array name="IGFSettings"/>
+                                       <array name="PortPinEcucPartitionRef"/>
+                                    </struct>
+                                    <struct name="11">
+                                       <setting name="Name" value="PortPin_11"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="12"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                       <setting name="OBEGroupSelect" value="NO_OBE_GROUP"/>
+                                       <setting name="MscrPdacSlot" value="VIRTUAL_WRAPPER_PDAC0"/>
+                                       <setting name="ImcrPdacSlot" value="VIRTUAL_WRAPPER_PDAC0"/>
+                                       <array name="IGFSettings"/>
+                                       <array name="PortPinEcucPartitionRef"/>
+                                    </struct>
+                                    <struct name="12">
+                                       <setting name="Name" value="PortPin_12"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="13"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                       <setting name="OBEGroupSelect" value="NO_OBE_GROUP"/>
+                                       <setting name="MscrPdacSlot" value="VIRTUAL_WRAPPER_PDAC0"/>
+                                       <setting name="ImcrPdacSlot" value="VIRTUAL_WRAPPER_PDAC0"/>
+                                       <array name="IGFSettings"/>
+                                       <array name="PortPinEcucPartitionRef"/>
+                                    </struct>
+                                    <struct name="13">
+                                       <setting name="Name" value="PortPin_13"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="14"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                       <setting name="OBEGroupSelect" value="NO_OBE_GROUP"/>
+                                       <setting name="MscrPdacSlot" value="VIRTUAL_WRAPPER_PDAC0"/>
+                                       <setting name="ImcrPdacSlot" value="VIRTUAL_WRAPPER_PDAC0"/>
+                                       <array name="IGFSettings"/>
+                                       <array name="PortPinEcucPartitionRef"/>
+                                    </struct>
+                                    <struct name="14">
+                                       <setting name="Name" value="PortPin_14"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="15"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                       <setting name="OBEGroupSelect" value="NO_OBE_GROUP"/>
+                                       <setting name="MscrPdacSlot" value="VIRTUAL_WRAPPER_PDAC0"/>
+                                       <setting name="ImcrPdacSlot" value="VIRTUAL_WRAPPER_PDAC0"/>
+                                       <array name="IGFSettings"/>
+                                       <array name="PortPinEcucPartitionRef"/>
+                                    </struct>
+                                    <struct name="15">
+                                       <setting name="Name" value="PortPin_15"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="16"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                       <setting name="OBEGroupSelect" value="NO_OBE_GROUP"/>
+                                       <setting name="MscrPdacSlot" value="VIRTUAL_WRAPPER_PDAC0"/>
+                                       <setting name="ImcrPdacSlot" value="VIRTUAL_WRAPPER_PDAC0"/>
+                                       <array name="IGFSettings"/>
+                                       <array name="PortPinEcucPartitionRef"/>
+                                    </struct>
+                                    <struct name="16">
+                                       <setting name="Name" value="PortPin_16"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="17"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                       <setting name="OBEGroupSelect" value="NO_OBE_GROUP"/>
+                                       <setting name="MscrPdacSlot" value="VIRTUAL_WRAPPER_PDAC0"/>
+                                       <setting name="ImcrPdacSlot" value="VIRTUAL_WRAPPER_PDAC0"/>
+                                       <array name="IGFSettings"/>
+                                       <array name="PortPinEcucPartitionRef"/>
+                                    </struct>
+                                    <struct name="17">
+                                       <setting name="Name" value="PortPin_17"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="18"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                       <setting name="OBEGroupSelect" value="NO_OBE_GROUP"/>
+                                       <setting name="MscrPdacSlot" value="VIRTUAL_WRAPPER_PDAC0"/>
+                                       <setting name="ImcrPdacSlot" value="VIRTUAL_WRAPPER_PDAC0"/>
+                                       <array name="IGFSettings"/>
+                                       <array name="PortPinEcucPartitionRef"/>
+                                    </struct>
+                                    <struct name="18">
+                                       <setting name="Name" value="PortPin_18"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="19"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                       <setting name="OBEGroupSelect" value="NO_OBE_GROUP"/>
+                                       <setting name="MscrPdacSlot" value="VIRTUAL_WRAPPER_PDAC0"/>
+                                       <setting name="ImcrPdacSlot" value="VIRTUAL_WRAPPER_PDAC0"/>
+                                       <array name="IGFSettings"/>
+                                       <array name="PortPinEcucPartitionRef"/>
+                                    </struct>
                                  </array>
                               </struct>
                            </array>
@@ -2595,6 +2917,78 @@
                         </struct>
                         <struct name="us_tab">
                            <setting name="configUSER_SETTINGS" value=""/>
+                        </struct>
+                     </config_set>
+                  </instance>
+                  <instance name="C40_Ip" uuid="89f02b20-1a6d-4971-af63-10de1ad582fb" type="C40_Ip" type_id="C40_Ip" mode="ip" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="C40_Ip" quick_selection="MemDefault">
+                        <setting name="Name" value="C40_Ip"/>
+                        <struct name="ConfigTimeSupport">
+                           <setting name="POST_BUILD_VARIANT_USED" value="false"/>
+                           <setting name="IMPLEMENTATION_CONFIG_VARIANT" value="VARIANT-PRE-COMPILE"/>
+                        </struct>
+                        <struct name="MemGeneral">
+                           <setting name="Name" value="MemGeneral"/>
+                           <setting name="C40IpDevErrorDetect" value="false"/>
+                           <setting name="MemHwCompareService" value="false"/>
+                           <setting name="MemEnableCheckCfgCrc" value="false"/>
+                           <setting name="MemHwUtestModeService" value="false"/>
+                           <setting name="MemSectorSetLockApi" value="false"/>
+                           <setting name="MemEraseVerificationEnabled" value="false"/>
+                           <setting name="MemWriteVerificationEnabled" value="false"/>
+                           <array name="MemStartFlashAccessNotif"/>
+                           <array name="MemFinishedFlashAccessNotif"/>
+                           <setting name="MemTimeoutSupervisionEnabled" value="false"/>
+                           <setting name="MemTimeoutMethod" value="OSIF_COUNTER_DUMMY"/>
+                           <setting name="MemEraseTimeout" value="0"/>
+                           <setting name="MemWriteTimeout" value="0"/>
+                           <setting name="MemAbortTimeout" value="0"/>
+                           <setting name="MemUtestArrayIntegrityCheckTimeout" value="0"/>
+                           <setting name="MemUtestSuspendTimeout" value="0"/>
+                           <setting name="MemUtestResumeTimeout" value="0"/>
+                        </struct>
+                        <struct name="MemAutosarExt">
+                           <setting name="Name" value="MemAutosarExt"/>
+                           <setting name="MemEnableUserModeSupport" value="false"/>
+                           <setting name="MemSynchronizeCache" value="false"/>
+                           <setting name="MemEccDataErrorSuppression" value="false"/>
+                           <setting name="MemBlock4PipeSelect" value="MEM_COMMAND_PIPE_0"/>
+                           <setting name="MemUsesAlterInterface" value="false"/>
+                        </struct>
+                        <struct name="MemPublishedInformation" quick_selection="Default">
+                           <setting name="Name" value="MemPublishedInformation"/>
+                           <setting name="MemErasedValue" value="4294967295"/>
+                           <setting name="MemECCValue" value="1427461397"/>
+                        </struct>
+                        <struct name="CommonPublishedInformation" quick_selection="Default">
+                           <setting name="Name" value="CommonPublishedInformation"/>
+                           <setting name="ArReleaseMajorVersion" value="4"/>
+                           <setting name="ArReleaseMinorVersion" value="7"/>
+                           <setting name="ArReleaseRevisionVersion" value="0"/>
+                           <setting name="ModuleId" value="91"/>
+                           <setting name="SwMajorVersion" value="6"/>
+                           <setting name="SwMinorVersion" value="0"/>
+                           <setting name="SwPatchVersion" value="0"/>
+                           <setting name="VendorApiInfix" value="INFLS"/>
+                           <setting name="VendorId" value="43"/>
+                        </struct>
+                     </config_set>
+                  </instance>
+                  <instance name="Cache_Ip" uuid="c18b0cbb-472b-4a4c-90c2-97f6013d4105" type="Cache_Ip" type_id="Cache_Ip" mode="general" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="Cache_Ip">
+                        <setting name="Name" value="Cache"/>
+                        <struct name="ConfigTimeSupport">
+                           <setting name="POST_BUILD_VARIANT_USED" value="false"/>
+                           <setting name="IMPLEMENTATION_CONFIG_VARIANT" value="VARIANT-POST-BUILD"/>
+                        </struct>
+                        <struct name="MclGeneral">
+                           <setting name="Name" value="MclGeneral"/>
+                           <setting name="MclEnableUserModeSupport" value="false"/>
+                           <struct name="MclCache">
+                              <setting name="Name" value="MclCache"/>
+                              <setting name="MclEnableCache" value="false"/>
+                              <setting name="MclEnableCacheDevErrorDetect" value="false"/>
+                           </struct>
                         </struct>
                      </config_set>
                   </instance>

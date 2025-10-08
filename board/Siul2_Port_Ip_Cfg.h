@@ -115,7 +115,7 @@ extern "C"{
 #define SIUL2_MSCR_SRE(x)                        (((uint32)(((uint32)(x)) << SIUL2_MSCR_SRE_SHIFT)) & SIUL2_MSCR_SRE_MASK)
 
 /*! @brief User number of configured pins */
-#define NUM_OF_CONFIGURED_PINS 10
+#define NUM_OF_CONFIGURED_PINS 19
 
 #define PORT_START_SEC_CONFIG_DATA_UNSPECIFIED
 #include "Port_MemMap.h"
