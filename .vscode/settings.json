@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.dbc": "dbc",
+        "siul2_dio_ip.h": "c",
+        "dio.h": "c",
+        "debug_uart.h": "c",
+        "api.h": "c",
+        "osif.h": "c",
+        "string.h": "c"
+    }
+}

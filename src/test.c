@@ -117,6 +117,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
+#include "debug_print.h"
 
 #if defined(USING_OS_FREERTOS)
 /* FreeRTOS kernel includes. */
@@ -350,7 +351,7 @@ static void interface_init(void)
       netif_create_ip6_linklocal_address(&network_interfaces[i], 1);
 
 #if defined(PRINTF_SUPPORT) && PRINTF_SUPPORT !=0
-    printf("ip6 linklocal address: ");
+    debug_print("ip6 linklocal address: ");
 #endif /* PRINTF_SUPPORT */
     ip6_addr_debug_print(0xFFFFFFFFU & ~LWIP_DBG_HALT, netif_ip6_addr(&network_interfaces[i], 0));
     }
@@ -402,7 +403,7 @@ dns_found(const char *name, const ip_addr_t *addr, void *arg)
 {
   LWIP_UNUSED_ARG(arg);
 #if PRINTF_SUPPORT
-  printf("%s: %s\n", name, addr ? ipaddr_ntoa(addr) : "<not found>");
+  debug_print("%s: %s\n", name, addr ? ipaddr_ntoa(addr) : "<not found>");
 #else
   LWIP_UNUSED_ARG(name);
   LWIP_UNUSED_ARG(addr);
@@ -433,7 +434,7 @@ lwiperf_report(void *arg, enum lwiperf_report_type report_type,
   LWIP_UNUSED_ARG(local_port);
 
 #if defined(PRINTF_SUPPORT) && PRINTF_SUPPORT !=0
-  printf("IPERF report: type=%d, remote: %s:%d, total bytes: %lu, duration in ms: %lu, kbits/s: %lu\n",
+  debug_print("IPERF report: type=%d, remote: %s:%d, total bytes: %lu, duration in ms: %lu, kbits/s: %lu\n",
     (int)report_type, ipaddr_ntoa(remote_addr), (int)remote_port, bytes_transferred, ms_duration, bandwidth_kbitpsec);
 #else
   LWIP_UNUSED_ARG(report_type);
@@ -686,7 +687,7 @@ void vAssertCalled(uint32_t ulLine, const char * const pcFileName)
   www.freertos.org/a00110.html#configASSERT for more information. */
 
 #if defined(PRINTF_SUPPORT) && PRINTF_SUPPORT !=0
-  printf("ASSERT! Line %d, file %s\r\n", ulLine, pcFileName);
+  debug_print("ASSERT! Line %d, file %s\r\n", ulLine, pcFileName);
 #else
   /* Parameters are not used. */
   LWIP_UNUSED_ARG(ulLine);

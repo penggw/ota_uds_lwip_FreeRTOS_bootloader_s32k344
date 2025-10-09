@@ -17,6 +17,9 @@
 
 #include "device.h"
 
+#include "doip_task_example.h"
+#include <stdio.h>
+
 /* The actual TCP/IP test */
 extern void start_example(void);
 
@@ -25,7 +28,8 @@ int main(void)
 {
     device_init();
 
-    start_example();
+    //start_example();
+    doip_application_init();
 
     return 0;
 }

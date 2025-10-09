@@ -72,7 +72,7 @@ void device_init(void)
     /* Initializes an UART driver*/
     //Uart_Init(NULL_PTR);
     debug_print_init();
-    debug_print("System Startup...\n");
+    debug_print("System Startup...\r\n");
 
 
 #ifndef USING_OS_FREERTOS

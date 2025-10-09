@@ -52,6 +52,21 @@ static boolean debug_print_initialized = FALSE;
  */
 static boolean debug_print_wait_transmit_complete(uint32 timeout_us);
 
+/**
+ * @brief Newlib system call to redirect printf output to debug UART
+ *
+ * This function implements the _write system call used by newlib's C library
+ * for functions like printf, puts, etc. All standard output is redirected
+ * to the debug UART through the debug_print_char function.
+ *
+ * @param file    File descriptor (1=stdout, 2=stderr) - ignored
+ * @param ptr     Pointer to buffer containing characters to write
+ * @param len     Number of characters to write
+ *
+ * @return int    Number of characters written, or -1 on error
+ */
+int _write(int file, char *ptr, int len);
+
 /*==================================================================================================
                                        GLOBAL FUNCTIONS
 ==================================================================================================*/
@@ -282,4 +297,31 @@ static boolean debug_print_wait_transmit_complete(uint32 timeout_us)
 
     /* Timeout */
     return FALSE;
+}
+
+int _write(int file, char *ptr, int len)
+{
+    int i;
+    (void)file; /* Suppress unused parameter warning */
+
+    /* Check if debug print is initialized */
+    if (debug_print_initialized == FALSE)
+    {
+        return -1; /* Error: not initialized */
+    }
+
+    /* Check input parameters */
+    if (ptr == NULL_PTR || len < 0)
+    {
+        return -1; /* Error: invalid parameters */
+    }
+
+    /* Send each character individually through debug UART */
+    for (i = 0; i < len; i++)
+    {
+        debug_print_char(ptr[i]);
+    }
+
+    /* Return number of characters written */
+    return len;
 }

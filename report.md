@@ -65,3 +65,51 @@ Potential improvements could include:
 Per Coordinator Pattern guidelines, this task has been fully implemented and documented. All specification updates are complete, and the implementation follows the system architecture and coding standards.
 
 ### Status: **COMPLETED** ✅
+
+---
+
+## Task Implementation: Fix doip_task_example.c
+
+### Date Completed
+2025-10-09
+
+### Task Description
+Corrected critical issues in `doip_task_example.c` to ensure proper compilation and execution within the FreeRTOS environment for the DoIP over Ethernet bootloader implementation.
+
+### Implementation Details
+
+#### Issues Fixed
+1. **Duplicate Header Include**: Removed the second inclusion of `"lwipcfg.h"` that was causing potential redefinition errors.
+
+2. **Undefined Function Call**: Replaced the undefined `apps_init()` call with `doip_lwip_adapter_init()`, which is properly declared and implemented.
+
+3. **Function Signature Correction**: Changed `doip_application_init()` return type from `BaseType_t` to `void` to match the embedded system behavior where the function starts the scheduler and never returns.
+
+4. **Unreachable Code Removal**: Eliminated the unreachable `return pdTRUE;` statement after the infinite loop following `vTaskStartScheduler()`.
+
+5. **Error Handling Improvement**: Added error logging and infinite loops for critical failures (mutex creation, task creation) instead of returning, since the function no longer returns.
+
+#### Files Modified
+1. **src/doip/doip_task_example.c**
+   - Removed duplicate `#include "lwipcfg.h"`
+   - Replaced `apps_init();` with `doip_lwip_adapter_init();`
+   - Changed `BaseType_t doip_application_init(void)` to `void doip_application_init(void)`
+   - Removed unreachable `return pdTRUE;`
+   - Added `while(1)` for error handling with logging
+
+2. **src/doip/doip_lwip_adapter.c**
+   - Added missing `#include "doip_lwip_adapter.h"`
+   - Implemented `doip_lwip_adapter_init()` function that returns `DOIP_RESULT_OK` (since global ops are statically initialized)
+
+#### Technical Details
+- **Integration**: Ensures proper lwIP adapter initialization during DoIP application startup.
+- **Memory Safety**: Removes potential header redefinition issues.
+- **Task Flow**: Corrects the FreeRTOS application initialization pattern where the scheduler is started and control is not returned to the caller.
+- **Error Handling**: Critical errors now log and halt rather than attempting invalid returns.
+
+### Verification
+- Code should now compile without undefined function errors.
+- Proper task creation and scheduler start sequence.
+- Adhered to S32K344 platform constraints and FreeRTOS best practices.
+
+### Status: **COMPLETED** ✅
