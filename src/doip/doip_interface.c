@@ -1,5 +1,7 @@
 #include "doip_interface.h"
 #include <string.h>
+#include <errno.h>
+#include "debug_print.h"
 
 #define INVALID_SOCKET  (-1)
 
@@ -262,17 +264,19 @@ doip_result_t doip_interface_process(
                 if (disconnected_callback != NULL) {
                     disconnected_callback((int)i, user_data);
                 }
-                
+
                 interface->net_ops->close_socket(interface->connections[i].socket_fd);
                 interface->connections[i].socket_fd = INVALID_SOCKET;
                 interface->connections[i].state = DOIP_CONN_STATE_CLOSED;
                 interface->connections[i].rx_buffer_used = 0U;
             } else {
                 /* Error or would block - continue */
+                /* For non-blocking sockets, EAGAIN/EWOULDBLOCK means no data available */
+                /* Remove immediate disconnection detection here, let inactivity timer handle it */
             }
         }
     }
-    
+
     return DOIP_RESULT_OK;
 }
 

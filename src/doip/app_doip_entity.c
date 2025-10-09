@@ -386,9 +386,17 @@ static void entity_tcp_disconnected_callback(
     void *user_data)
 {
     doip_entity_t *entity = (doip_entity_t *)user_data;
-    
+
+    /* Reset connection to initial state */
     entity->connections[connection_id].connection_id = -1;
+    entity->connections[connection_id].source_address = 0U;
     entity->connections[connection_id].is_activated = false;
+    entity->connections[connection_id].initial_inactivity_timer = 0U;
+    entity->connections[connection_id].general_inactivity_timer = 0U;
+    entity->connections[connection_id].alive_check_timer = 0U;
+    entity->connections[connection_id].alive_check_pending = false;
+
+    debug_print("[DOIP] Connection %d disconnected and cleaned up\r\n", connection_id);
 }
 
 doip_result_t doip_entity_process(
