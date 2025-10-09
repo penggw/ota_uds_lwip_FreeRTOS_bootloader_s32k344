@@ -75,7 +75,7 @@ outputs:
 - {id: FLEXCANA_CLK.outFreq, value: 16 MHz}
 - {id: FLEXCANB_CLK.outFreq, value: 16 MHz}
 - {id: FLEXIO0_CLK.outFreq, value: 25 MHz}
-- {id: FXOSCOUT.outFreq, value: 40 MHz}
+- {id: FXOSCOUT.outFreq, value: 16 MHz}
 - {id: HSE_CLK.outFreq, value: 50 MHz}
 - {id: INTM_CLK.outFreq, value: 25 MHz}
 - {id: LBIST_CLK.outFreq, value: 50/7 MHz}
@@ -110,7 +110,7 @@ outputs:
 - {id: PIT1_CLK.outFreq, value: 25 MHz}
 - {id: PIT2_CLK.outFreq, value: 25 MHz}
 - {id: PLL_PHI0.outFreq, value: 50 MHz}
-- {id: PLL_PHI1.outFreq, value: 250 MHz}
+- {id: PLL_PHI1.outFreq, value: 200 MHz}
 - {id: QSPI0_RAM_CLK.outFreq, value: 25 MHz}
 - {id: QSPI0_SFCK.outFreq, value: 48 MHz}
 - {id: QSPI0_TX_MEM_CLK.outFreq, value: 25 MHz}
@@ -134,7 +134,7 @@ outputs:
 - {id: TSENSE0_CLK.outFreq, value: 25 MHz}
 - {id: WKPU0_CLK.outFreq, value: 25 MHz}
 settings:
-- {id: CORE_MFD.scale, value: '50', locked: true}
+- {id: CORE_MFD.scale, value: '100', locked: true}
 - {id: CORE_PLLODIV_0_DE, value: Enabled}
 - {id: CORE_PLLODIV_1_DE, value: Enabled}
 - {id: CORE_PLL_PD, value: Power_up}
@@ -161,11 +161,12 @@ settings:
 - {id: MODULE_CLOCKS.MC_CGM_AUX8_DIV0.scale, value: '2', locked: true}
 - {id: MODULE_CLOCKS.MC_CGM_AUX8_MUX.sel, value: external_clocks.EMACMIIRMIITXOUT}
 - {id: MODULE_CLOCKS.MC_CGM_AUX9_MUX.sel, value: external_clocks.EMACMIIRMIITXOUT}
-- {id: PHI0.scale, value: '5'}
+- {id: PHI0.scale, value: '8', locked: true}
+- {id: PHI1.scale, value: '2', locked: true}
 - {id: PLL_PREDIV.scale, value: '2', locked: true}
-- {id: POSTDIV.scale, value: '4', locked: true}
+- {id: POSTDIV.scale, value: '2', locked: true}
 sources:
-- {id: FXOSC_CLK.FXOSC_CLK.outFreq, value: 40 MHz, enabled: true}
+- {id: FXOSC_CLK.FXOSC_CLK.outFreq, value: 16 MHz, enabled: true}
 - {id: external_clocks.emac_mii_rmii_tx.outFreq, value: 50 MHz, enabled: true}
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS **********/
    

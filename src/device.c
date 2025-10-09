@@ -28,6 +28,11 @@
 #include "ethif_port.h"
 #include "OsIf.h"
 #include "Platform.h"
+#include "Mcl.h"
+
+#include "Lpuart_Uart_Ip_Irq.h"
+#include "CDD_Uart.h"
+#include "debug_print.h"
 
 #ifndef USING_OS_FREERTOS
 #include "Gpt.h"
@@ -60,6 +65,15 @@ void device_init(void)
 
     /* Initialize Platform driver */
     Platform_Init(NULL_PTR);
+
+    /* Initialize Mcl module */
+    Mcl_Init(NULL_PTR);
+
+    /* Initializes an UART driver*/
+    //Uart_Init(NULL_PTR);
+    debug_print_init();
+    debug_print("System Startup...\n");
+
 
 #ifndef USING_OS_FREERTOS
 

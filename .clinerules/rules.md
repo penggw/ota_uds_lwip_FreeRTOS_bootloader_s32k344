@@ -9,8 +9,13 @@
 - Function-level comments must be provided when generating code
 - When planning the project, provide analysis recommendations for frameworks to be used, and allow the user to select the final framework
 
+### Windows PowerShell Environment
+- using PowerShell on Windows 
+- In PowerShell, commands need to be separated by ";".
+- separated "&&" is invalid. 
+
 ### Build Code
-- cd .\Debug_FLASH\ ; make all
+-  Build Code use PowerShell command "cd .\Debug_FLASH\ ; make all"
 
 ### Coordinator Pattern (Boomerang Pattern) Requirements
 
